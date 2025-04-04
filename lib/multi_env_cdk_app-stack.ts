@@ -11,5 +11,11 @@ export class MultiEnvCdkAppStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true // This will empty the bucket when the stack is deleted
     });
+
+    new s3.Bucket(this, 'testBucket', {
+      versioned: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true // This will empty the bucket when the stack is deleted
+    });
   }
 }
