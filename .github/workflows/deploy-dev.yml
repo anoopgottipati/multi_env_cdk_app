@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '18'
       
       - run: npm ci
       - run: npm run build
@@ -22,4 +22,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
-      - run: npx cdk deploy --context env=dev --require-approval never
+      - run: npx cdk deploy --context env=dev --require-approval never 
